@@ -1,7 +1,8 @@
-package com.bolsadeideas.springboot.app.models.service;
+package com.bolsadeideas.springboot.app.models.service.impl;
 
 import java.util.List;
 
+import com.bolsadeideas.springboot.app.models.service.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

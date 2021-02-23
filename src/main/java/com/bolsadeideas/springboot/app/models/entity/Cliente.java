@@ -15,76 +15,39 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "clientes")
+@Getter
+@Setter
 public class Cliente implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@NotEmpty
-	private String nombre;
-	
-	@NotEmpty
-	private String apellido;
-	
-	@NotEmpty
-	@Email
-	private String email;
+    @NotEmpty
+    private String nombre;
 
-	@NotNull
-	@Column(name = "create_at")
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date createAt;
+    @NotEmpty
+    private String apellido;
 
-	public Long getId() {
-		return id;
-	}
+    @NotEmpty
+    @Email
+    private String email;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @NotNull
+    @Column(name = "create_at")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createAt;
 
-	public String getNombre() {
-		return nombre;
-	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    private String foto;
 
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Date getCreateAt() {
-		return createAt;
-	}
-
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
 }
